@@ -76,6 +76,9 @@
       padding-left: 9px;
       margin-bottom: 5px;
       color: #a8a9b4;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
     
     .navmenu ul.skills-list {
@@ -185,16 +188,20 @@
       /* Add height if needed, but often flex container height is determined by content or parent */
     }
 
-    .navmenu ul.language-list {
-        list-style: none;
-        padding: 0;
-        margin: 0 0 20px 0;
+    .language-progress {
+      width: 60px;
+      height: 6px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-left: auto;
     }
 
-    .navmenu ul.language-list li {
-      padding-left: 9px;
-      margin-bottom: 5px;
-      color: #a8a9b4;
+    .language-progress .progress-bar {
+      height: 100%;
+      background-color: #08c1ff;
+      border-radius: 3px;
+      transition: width 0.3s ease;
     }
   </style>
 
