@@ -185,7 +185,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      /* Add height if needed, but often flex container height is determined by content or parent */
+    }
+
+    /* Hide scroll up button in footer */
+    .footer .scroll-top {
+      display: none !important;
     }
 
     .language-progress {
@@ -238,9 +242,9 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="tel:5145727361"><i class="bi bi-telephone navicon"></i> <strong>Téléphone:</strong>514.572.7361</a></li>
-        <li><a href="mailto:contact@digitaleo.ca"><i class="bi bi-envelope navicon"></i> <strong>Courriel:</strong> contact@digitaleo.ca</a></li>
-        <li><a href="https://www.linkedin.com/in/leonardovenegas/" target="_blank"><i class="bi bi-linkedin navicon"></i> <strong>LinkedIn:</strong> @leonardovenegas</a></li>
+        <li><a href="tel:5145727361"><i class="bi bi-telephone navicon"></i> <strong>Téléphone:</strong>&nbsp;&nbsp;514.572.7361</a></li>
+        <li><a href="mailto:contact@digitaleo.ca"><i class="bi bi-envelope navicon"></i> <strong>Courriel:</strong>&nbsp;&nbsp;contact@digitaleo.ca</a></li>
+        <li><a href="https://www.linkedin.com/in/leonardovenegas/" target="_blank"><i class="bi bi-linkedin navicon"></i> <strong>LinkedIn:</strong>&nbsp;&nbsp;@leonardovenegas</a></li>
       </ul>
       <h3>Langue</h3>
       <ul class="language-list">
@@ -250,11 +254,16 @@
       </ul>
       <h3>Compétences</h3>
       <ul class="skills-list">
-        <li>Direction générale</li>
         <li>Opérations et optimisation des processus</li>
         <li>Finances, budgétisation, négociations contractuelles</li>
         <li>Développement des affaires, prospection, création de partenariats</li>
         <li>Planification stratégique, gestion de projet, gestion d'équipes</li>
+      </ul>
+      <h3>Formation</h3>
+      <ul class="skills-list">
+        <li>UQAM - ESG, Montréal - 2010 – 2013</li>
+        <li>B.B.A. en administration des affaires – Profil systèmes d'information</li>
+        
       </ul>
       <h3>Centre d'intérêts</h3>
       <ul class="interests-list">
@@ -283,7 +292,7 @@
       <div class="container">
 
         <div class="row">
-<div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <h3 class="resume-title">Expérience professionnelle</h3>
             <div class="resume-item">
               <h4>DigitaLeo</h4>
@@ -295,7 +304,7 @@
                 <li>Accompagnement technique et stratgique</li>
                 <li>Accompagnement stratégique et marketing numérique</li>
               </ul>
-            </div><!-- Edn Resume Item -->
+            </div>
 
             <div class="resume-item">
               <h4>ctrlweb - Cofondateur & Associé</h4>
@@ -307,6 +316,9 @@
                 <li>Gestion d'équipes pluridisciplinaires d'une vingtaine d'employés</li>
                 <li>Élaboration de protocoles de gestion de crise </li>
               </ul>
+            </div>
+
+            <div class="resume-item">
               <h4>Détail Formation - Communications</h4>
               <h5>2012 - 2013</h5>
               <p><em>Montréal, Qc</em></p>
@@ -315,19 +327,47 @@
                 <li>Élaborer des stratgies pour les réseaux sociaux et le site web</li>
                 <li>Présenter des formations sur les meilleurs pratiques numérique</li>
               </ul>
-            </div><!-- Edn Resume Item -->
+            </div>
 
           </div>
           
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
 
-            <h3 class="resume-title">Formation</h3>
+            <h3 class="resume-title">Réalisations</h3>
             <div class="resume-item">
-              <h4>UQAM - ESG, Montréal</h4>
-              <h5>2010 – 2013</h5>
-              <p><em>B.B.A. en administration des affaires – Profil systèmes d'information</em></p>
-            </div><!-- Edn Resume Item -->
-        </div>
+              <h4>Plateforme transactionnelle pour la FEEP</h4>
+              <h5>2024 - Présent</h5>
+              <p><em>Montréal, Qc </em></p>
+              <ul>
+                <li>Consultant numérique</li>
+                <li>Développement d'affaires</li>
+                <li>Accompagnement technique et stratgique</li>
+                <li>Accompagnement stratégique et marketing numérique</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Refonte Web CVM</h4>
+              <h5>2013 - 2023</h5>
+              <p><em>Montréal, Qc</em></p>
+              <ul>
+                <li>Développement des affaires, recherche de financement et négociation de partenariats </li>
+                <li>Élaboration lignes directrices opérationnelles pour l'optimisation des processus internes</li>
+                <li>Gestion d'équipes pluridisciplinaires d'une vingtaine d'employés</li>
+                <li>Élaboration de protocoles de gestion de crise </li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Refonte Technologique - Plateforme Collaborative de Téléprésence Scenic pour la SAT</h4>
+              <h5>2012 - 2013</h5>
+              <p><em>Montréal, Qc</em></p>
+              <ul>
+                <li>Aider la direction dans les tâches quotidiennes </li>
+                <li>Élaborer des stratgies pour les réseaux sociaux et le site web</li>
+                <li>Présenter des formations sur les meilleurs pratiques numérique</li>
+              </ul>
+            </div>
 
       </div>
 
@@ -337,11 +377,12 @@
     <section id="services" class="services section">
 
       <!-- Section Title -->
+      <!--
       <div class="container section-title" data-aos="fade-up">
         <h2>Llorem Ipsum</h2>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
-      </div><!-- End Section Title -->
-
+      /div><!- End Section Title -->
+      
       <div class="container">
 
         <div class="row gy-4">
