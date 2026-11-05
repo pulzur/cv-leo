@@ -223,7 +223,7 @@
   <style>
     /* Ajouts nouveau CV */
     .resume-item h4 { white-space: normal !important; overflow: visible !important; }
-    .section-title .cv-headline { font-size: 1.2rem; font-weight: 500; color: #272829; margin-bottom: 4px; }
+    .section-title .cv-headline { font-size: 1.2rem; font-weight: 500; color: #2a2b2c; margin-bottom: 4px; }
     .section-title .cv-tagline { font-style: italic; color: #000000; margin-bottom: 20px; }
     #profil { padding-bottom: 0; }
     #competences, #domaines { padding-top: 34px; }
@@ -235,13 +235,14 @@
     /* Au repos : rond noir */
     .services .service-item .icon { background: #000000; border-color: #000000; }
     .services .service-item:hover .icon { background: var(--surface-color); border-color: #ED1C24; }
-    /* Titres de section (h2) en noir, petite ligne en rouge du logo */
-    .main .section-title h2 { color: #000000 !important; }
+    /* Titres de section (h2) en anthracite (#2A2B2C, comme la colonne de gauche), petite ligne en rouge du logo */
+    .main .section-title h2 { color: #2a2b2c !important; }
     .main .section-title h2:after { background: #ED1C24; }
     /* « On se rencontre pour en discuter ? » au rouge du logo */
     .footer h3 { color: #ED1C24 !important; }
-    /* Intertitres « Expérience professionnelle » et « Réalisations » : même couleur que les titres des postes */
-    .resume h3.resume-title { color: color-mix(in srgb, var(--default-color), transparent 20%) !important; }
+    /* Intertitres, titres des postes et titres des cartes : même anthracite que la colonne de gauche */
+    .resume h3.resume-title { color: #2a2b2c !important; }
+    .resume .resume-item h4, .services .service-item .title { color: #2a2b2c; }
     /* Colonne de gauche : fond gris anthracite foncé, texte éclairci pour rester lisible */
     .header.dark-background { --background-color: #2a2b2c; --surface-color: #1d1e1f; --nav-color: #e4e4e6; }
     .navmenu ul.language-list li, .navmenu ul.skills-list li, .navmenu ul.interests-list li { color: #e4e4e6; }
