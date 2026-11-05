@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>cv</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link rel="icon" href="assets/img/leo-favicon.ico" type="image/x-icon">
+
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <style>
+    body, h1, h2, h3, h4, h5, h6, p, span, a, li, button, input, textarea {
+      font-family: 'Roboto', sans-serif !important;
+    }
+    
+    h1, h2, h3 {
+      color: #08c1ff !important;
+    }
+
+    .social-links.text-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .social-links.text-center a {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .social-links.text-center a:last-child {
+      margin-bottom: 0;
+    }
+
+    .navmenu ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .navmenu h3 {
+      margin-left: 0;
+      padding-left: 9px;
+    }
+
+    .navmenu ul li a {
+      padding-top: 0 !important;
+      padding-bottom: 5px !important;
+    }
+
+    .navmenu ul.language-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+    }
+
+    .navmenu ul.language-list li {
+      padding-left: 9px;
+      margin-bottom: 5px;
+      color: #a8a9b4;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .navmenu ul.skills-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+    }
+
+    .navmenu ul.skills-list li {
+      padding-left: 9px;
+      margin-bottom: 5px;
+      color: #a8a9b4;
+    }
+
+    .navmenu ul.interests-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 20px 0;
+    }
+
+    .navmenu ul.interests-list li {
+      padding-left: 9px;
+      margin-bottom: 5px;
+      color: #a8a9b4;
+    }
+    
+    @media (max-width: 1199px) {
+      .header {
+        position: relative;
+        width: 100%;
+        height: auto;
+        top: auto;
+        left: auto;
+        bottom: auto;
+        padding: 15px;
+        border-right: none;
+      }
+
+      .header .profile-img {
+          margin-top: 0;
+      }
+
+      main {
+        margin-left: 0 !important;
+        padding-top: 0;
+      }
+
+      #navmenu ul {
+        align-items: center;
+      }
+
+      #navmenu > ul,
+      #navmenu > ul li,
+      #navmenu h3,
+      #navmenu ul.language-list,
+      #navmenu ul.language-list li,
+      #navmenu ul.skills-list,
+      #navmenu ul.skills-list li,
+      #navmenu ul.interests-list li {
+        text-align: center;
+      }
+
+      #services {
+        padding-top: 15px !important; /* Even further reduced padding for mobile */
+      }
+    }
+
+    .nav-top-img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    .resume-item h4 {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .cv-pdf-link {
+      font-size: 0.7em; /* Adjust as needed */
+      padding: 3px 6px;
+    }
+
+    #services {
+      padding-top: 34px; /* Further reduced top padding by 25% for desktop */
+    }
+
+    #services .container {
+      margin-top: -20px; /* Reduce space between title and content */
+    }
+
+    #navmenu {
+      padding-bottom: 30px; /* Padding at the bottom for desktop */
+    }
+
+    .footer {
+      padding-top: 10px; /* Reduced top padding */
+      padding-bottom: 10px; /* Reduced bottom padding */
+    }
+
+    .footer .copyright.text-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Hide scroll up button in footer */
+    .footer .scroll-top {
+      display: none !important;
+    }
+
+    .language-progress {
+      width: 60px;
+      height: 6px;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+      overflow: hidden;
+      margin-left: auto;
+    }
+
+    .language-progress .progress-bar {
+      height: 100%;
+      background-color: #08c1ff;
+      border-radius: 3px;
+      transition: width 0.3s ease;
+    }
+
+    .resume-title.realisations {
+      color: #ffa07a !important;
+    }
+  </style>
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/my-profile-img.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="old.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Leonardo Venegas</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="tel:5145727361" class="telephone"><i class="bi bi-telephone"></i></a>
+      <a href="mailto:contact@digitaleo.ca" class="email"><i class="bi bi-envelope"></i></a>
+      <a href="https://www.linkedin.com/in/leonardovenegas/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
+      <a href="assets/img/cv-leonardo.pdf" target="_blank" class="cv-pdf-link">pdf</a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="tel:5145727361"><i class="bi bi-telephone navicon"></i> <strong>Téléphone:</strong>&nbsp;&nbsp;514.572.7361</a></li>
+        <li><a href="mailto:contact@digitaleo.ca"><i class="bi bi-envelope navicon"></i> <strong>Courriel:</strong>&nbsp;&nbsp;contact@digitaleo.ca</a></li>
+        <li><a href="https://www.linkedin.com/in/leonardovenegas/" target="_blank"><i class="bi bi-linkedin navicon"></i> <strong>LinkedIn:</strong>&nbsp;&nbsp;@leonardovenegas</a></li>
+      </ul>
+      <h3>Langue</h3>
+      <ul class="language-list">
+        <li>🇫🇷<strong>Fr:</strong> écrit/parlé <div class="language-progress"><div class="progress-bar" style="width: 100%"></div></div></li>
+        <li>🇬🇧<strong>En:</strong> écrit/parlé <div class="language-progress"><div class="progress-bar" style="width: 100%"></div></div></li>
+        <li>🇪🇸<strong>Es:</strong> écrit/parlé <div class="language-progress"><div class="progress-bar" style="width: 100%"></div></div></li>
+      </ul>
+      <h3>Compétences</h3>
+      <ul class="skills-list">
+        <li>Opérations et optimisation des processus</li>
+        <li>Finances, budgétisation, négociations contractuelles</li>
+        <li>Développement des affaires, prospection, création de partenariats</li>
+        <li>Planification stratégique, gestion de projet, gestion d'équipes</li>
+      </ul>
+      <h3>Formation</h3>
+      <ul class="skills-list">
+        <li>UQAM - ESG, Montréal - 2010 – 2013</li>
+        <li>B.B.A. en administration des affaires – Profil systèmes d'information</li>
+        
+      </ul>
+      <h3>Centre d'intérêts</h3>
+      <ul class="interests-list">
+        <li>Escalade et plein air</li>
+        <li>Voyages découvertes</li>
+        <li>Art visuel et musique</li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main">
+
+    <!-- Resume Section -->
+    <section id="resume" class="resume section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Profil professionnel</h2>
+         <p>Je suis un professionnel du numérique cumulant plus de 10 ans d'expérience en gestion d'équipes, direction d'agence et pilotage de projets web.</p><br><p>En tant que cofondateur, actionnaire et membre de la direction d'une agence web/numérique, l'amélioration continue, l'esprit d'équipe et une compréhension fine des technologies web furent au coeur des responsabilités exercées.</p>
+         <br><p>Autodidacte et passionné, mon expertise couvre également les opérations, le développement des affaires et la gestion financière.</p>
+      
+        </div><!-- End Section Title -->
+
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="resume-title">Expérience professionnelle</h3>
+            <div class="resume-item">
+              <h4>DigitaLeo</h4>
+              <h5>2024 - Présent</h5>
+              <p><em>Montréal, Qc </em></p>
+              <ul>
+                <li>Consultant numérique</li>
+                <li>Développement d'affaires</li>
+                <li>Accompagnement technique et stratégique</li>
+                <li>Accompagnement marketing numérique</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>ctrlweb - Cofondateur & Associé</h4>
+              <h5>2013 - 2023</h5>
+              <p><em>Montréal, Qc</em></p>
+              <ul>
+                <li>Développement des affaires, recherche de financement et négociation de partenariats </li>
+                <li>Élaboration lignes directrices opérationnelles pour l'optimisation des processus internes</li>
+                <li>Gestion d'équipes pluridisciplinaires d'une vingtaine d'employés</li>
+                <li>Élaboration de protocoles de gestion de crise </li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Détail Formation - Communications</h4>
+              <h5>2012 - 2013</h5>
+              <p><em>Montréal, Qc</em></p>
+              <ul>
+                <li>Aide à la direction dans les tâches quotidiennes </li>
+                <li>Élaboration des stratégies pour les réseaux sociaux et le site web</li>
+                <li>Présentations et formations sur les meilleurs pratiques numériques</li>
+              </ul>
+            </div>
+
+          </div>
+          
+          <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+
+            <h3 class="resume-title realisations" style="color: #ffa07a !important;">Réalisations</h3>
+            <div class="resume-item">
+              <h4>Plateforme transactionnelle pour la FEEP</h4>
+              <h5>2022 - 2023</h5>
+              <p><em>Montréal, Qc </em></p>
+              <ul>
+                <li>Conception d’une solution numérique sur mesure</li>
+                <li>Accompagnement stratégique et technique</li>
+                <li>Suivi budgétaire et gestion client</li>
+                <li>Optimisation de l’expérience utilisateur</li>  
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Refonte Web CVM</h4>
+              <h5>2020 - 2021</h5>
+              <ul>
+                <li>Stratégie pour appel d’offres</li>
+                <li>Direction d’équipe multidisciplinaire</li>
+                <li>Coordination des opérations</li>
+                <li>Suivi de la relation client</li>
+              </ul>
+            </div>
+
+            <div class="resume-item">
+              <h4>Refonte Technologique - Plateforme Collaborative de Téléprésence Scenic pour la SAT</h4>
+              <h5>2021 - 2022</h5>
+              <ul>
+                <li>Analyse et proposition technologique</li>
+                <li>Suivi budgétaire et gestion client</li>
+                <li>Négociation et pilotage de mandat</li>
+                <li>Montage et coordination d’équipe projet</li>
+              </ul>
+            </div>
+
+      </div>
+
+    </section><!-- /Resume Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section">
+
+      <!-- Section Title -->
+      <!--
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Llorem Ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. </p>
+      /div><!- End Section Title -->
+      
+      <div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-people"></i></div>
+            <div>
+              <h4 class="title">Esprit d'équipe</h4>
+              <p class="description">Contribue activement à un climat de travail positif et productif</p>
+            </div>
+          </div>
+          <!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-flag"></i></div>
+            <div>
+              <h4 class="title">Leadership collaboratif</h4>
+              <p class="description">Mobilise les forces du groupe pour atteindre les objectifs</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-currency-dollar"></i></div>
+            <div>
+              <h4 class="title">Gestion budgétaire & financement</h4>
+              <p class="description">Optimise les ressources et soutient la croissance.</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon flex-shrink-0"><i class="bi bi-book"></i></div>
+            <div>
+              <h4 class="title">Apprentissage autonome</h4>
+              <p class="description">Assimile rapidement de nouvelles compétences de façon proactive</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon flex-shrink-0"><i class="bi bi-laptop"></i></div>
+            <div>
+              <h4 class="title">Aisance technologique </h4>
+              <p class="description">Maîtrise des outils numériques et adaptation rapide aux innovations</p>
+            </div>
+          </div><!-- End Service Item -->
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
+            <div class="icon flex-shrink-0"><i class="bi bi-people-fill"></i></div>
+            <div>
+              <h4 class="title">Sens du relationnel</h4>
+              <p class="description">Crée des liens solides et communique avec aisance</p>
+            </div>
+          </div><!-- End Service Item -->
+
+        </div>
+
+      </div>
+
+    </section><!-- /Services Section -->
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center">
+        <h3>On se rencontre pour en discuter ?</h3>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
