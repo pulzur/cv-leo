@@ -203,7 +203,7 @@
 
     .language-progress .progress-bar {
       height: 100%;
-      background-color: #08c1ff;
+      background-color: #ffffff;
       border-radius: 3px;
       transition: width 0.3s ease;
     }
@@ -230,6 +230,63 @@
     #competences .section-title, #domaines .section-title { padding-bottom: 30px; }
     .navmenu a.cv-static, .navmenu a.cv-static:hover { color: #a8a9b4; cursor: default; }
     .footer .copyright.text-center.flex-column { flex-direction: column; }
+    /* Icônes Compétences et Domaines : au survol, fond blanc, dessin et contour au rouge du logo */
+    .services .service-item:hover .icon i { color: #ED1C24; }
+    /* Au repos : rond noir */
+    .services .service-item .icon { background: #000000; border-color: #000000; }
+    .services .service-item:hover .icon { background: var(--surface-color); border-color: #ED1C24; }
+    /* Titres de section (h2) en noir, petite ligne en rouge du logo */
+    .main .section-title h2 { color: #000000 !important; }
+    .main .section-title h2:after { background: #ED1C24; }
+    /* « On se rencontre pour en discuter ? » au rouge du logo */
+    .footer h3 { color: #ED1C24 !important; }
+    /* Intertitres « Expérience professionnelle » et « Réalisations » : même couleur que les titres des postes */
+    .resume h3.resume-title { color: color-mix(in srgb, var(--default-color), transparent 20%) !important; }
+    /* Colonne de gauche : nom, intertitres et barres de langue en blanc, bouton menu mobile en rouge */
+    #header .sitename { color: #ffffff !important; }
+    #header .navmenu h3 { color: #ffffff !important; }
+    .header .header-toggle { background-color: #ED1C24; }
+    .header .header-toggle:hover { background-color: #ffffff; color: #ED1C24; }
+    /* Survols de la colonne de gauche : boutons ronds en noir sur fond blanc ; lignes de contact entièrement en blanc */
+    .header .social-links a:hover { background: #ffffff; color: #000000; }
+    #navmenu > ul:first-child > li > a:hover, #navmenu > ul:first-child > li > a:hover .navicon { color: #ffffff; }
+    /* Bouton « remonter en haut » au rouge du logo */
+    #scroll-top { background-color: #ED1C24; }
+    #scroll-top:hover { background-color: color-mix(in srgb, #ED1C24, transparent 20%); }
+    /* Ligne du temps (trait vertical et ronds) au rouge du logo */
+    .resume .resume-item { border-left-color: #ED1C24; }
+    .resume .resume-item::before { border-color: #ED1C24; }
+    /* Animation : chaque segment se dessine de son rond vers le bas, à l'apparition du bloc à l'écran.
+       Active seulement si le script a ajouté "cv-trace" sur <html> (sinon, ligne pleine). */
+    html.cv-trace .resume .resume-item { border-left-color: transparent; }
+    html.cv-trace .resume .resume-item::before { z-index: 1; }
+    html.cv-trace .resume .resume-item::after {
+      content: '';
+      position: absolute;
+      left: -2px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #ED1C24;
+      transform: scaleY(0);
+      transform-origin: top center;
+      transition: transform 0.8s ease-out;
+      transition-delay: var(--cv-trace-delai, 0s);
+    }
+    html.cv-trace .resume .resume-item.cv-trace-visible::after { transform: scaleY(1); }
+    @media (prefers-reduced-motion: reduce) {
+      html.cv-trace .resume .resume-item::after { transform: none; transition: none; }
+    }
+    /* Barres de langue : remplissage de 0 à leur niveau quand l'écran de chargement disparaît */
+    @keyframes cv-barre-langue { from { width: 0; } }
+    body:has(#preloader) .language-progress .progress-bar { width: 0 !important; }
+    body:not(:has(#preloader)) .language-progress .progress-bar { animation: cv-barre-langue 1s ease-out both; }
+    body:not(:has(#preloader)) .language-list li:nth-child(1) .progress-bar { animation-delay: 0.2s; }
+    body:not(:has(#preloader)) .language-list li:nth-child(2) .progress-bar { animation-delay: 0.35s; }
+    body:not(:has(#preloader)) .language-list li:nth-child(3) .progress-bar { animation-delay: 0.5s; }
+    @media (prefers-reduced-motion: reduce) {
+      body:not(:has(#preloader)) .language-progress .progress-bar { animation: none; }
+    }
   </style>
 </head>
 
@@ -546,6 +603,24 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Ligne du temps : déclenche le tracé de chaque segment quand il apparaît à l'écran -->
+  <script>
+    (function () {
+      if (!('IntersectionObserver' in window)) return;
+      document.documentElement.classList.add('cv-trace');
+      var items = document.querySelectorAll('.resume .resume-item');
+      var obs = new IntersectionObserver(function (entries) {
+        var visibles = entries.filter(function (e) { return e.isIntersecting; });
+        visibles.forEach(function (e, i) {
+          e.target.style.setProperty('--cv-trace-delai', (0.3 + i * 0.35) + 's');
+          e.target.classList.add('cv-trace-visible');
+          obs.unobserve(e.target);
+        });
+      }, { threshold: 0.25 });
+      items.forEach(function (el) { obs.observe(el); });
+    })();
+  </script>
 
 </body>
 
