@@ -144,6 +144,17 @@
       #services {
         padding-top: 15px !important; /* Even further reduced padding for mobile */
       }
+
+      /* Lignes de contact : bloc centré, lignes alignées à gauche */
+      #navmenu > ul:first-child {
+        align-items: flex-start;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      #navmenu > ul:first-child li {
+        text-align: left;
+      }
     }
 
     .nav-top-img {
@@ -249,11 +260,14 @@
     /* Colonne de gauche : nom, intertitres et barres de langue en blanc, bouton menu mobile en rouge */
     #header .sitename { color: #ffffff !important; }
     #header .navmenu h3 { color: #ffffff !important; }
-    .header .header-toggle { background-color: #ED1C24; }
-    .header .header-toggle:hover { background-color: #ffffff; color: #ED1C24; }
+    /* Bouton menu mobile masqué : inutile ici (la colonne s'affiche déjà en haut sur mobile).
+       On le garde dans le HTML car le script du thème le cherche au chargement. */
+    .header .header-toggle { display: none !important; }
     /* Survols de la colonne de gauche : boutons ronds en noir sur fond blanc ; lignes de contact entièrement en blanc */
     .header .social-links a:hover { background: #ffffff; color: #000000; }
     #navmenu > ul:first-child > li > a:hover, #navmenu > ul:first-child > li > a:hover .navicon { color: #ffffff; }
+    /* Écart de 35 px entre les boutons ronds et la ligne Téléphone (24 px d'origine + 11 px) */
+    #navmenu > ul:first-child { margin-top: 11px; }
     /* Bouton « remonter en haut » au rouge du logo */
     #scroll-top { background-color: #ED1C24; }
     #scroll-top:hover { background-color: color-mix(in srgb, #ED1C24, transparent 20%); }
@@ -309,7 +323,6 @@
 
     <div class="social-links text-center">
       <a href="tel:5145727361" class="telephone"><i class="bi bi-telephone"></i></a>
-      <a href="mailto:contact@digitaleo.ca" class="email"><i class="bi bi-envelope"></i></a>
       <a href="https://www.linkedin.com/in/leonardovenegas/" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="assets/img/cv-leonardo-venegas-2026.pdf" target="_blank" class="cv-pdf-link">pdf</a>
     </div>
@@ -326,14 +339,6 @@
         <li>🇫🇷<strong>Fr:</strong> écrit/parlé <div class="language-progress"><div class="progress-bar" style="width: 100%"></div></div></li>
         <li>🇬🇧<strong>En:</strong> écrit/parlé <div class="language-progress"><div class="progress-bar" style="width: 100%"></div></div></li>
         <li>🇪🇸<strong>Es:</strong> écrit/parlé <div class="language-progress"><div class="progress-bar" style="width: 100%"></div></div></li>
-      </ul>
-      <h3>Technologies</h3>
-      <ul class="skills-list">
-        <li>Claude (projets, skills, connecteurs, Claude Code)</li>
-        <li>Automatisation des processus</li>
-        <li>Suite Zoho One, autres CRM</li>
-        <li>Google Workspace, GA4, Google Ads</li>
-        <li>WordPress, Cloudflare, Ploi, Resend, Git</li>
       </ul>
       <h3>Formation</h3>
       <ul class="skills-list">
@@ -377,14 +382,6 @@
         <div class="row gy-4">
 
           <div class="col-lg-6 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-offset="0" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="bi bi-people"></i></div>
-            <div>
-              <h4 class="title">Pédagogie et accompagnement</h4>
-              <p class="description">Analyse des besoins, vulgarisation de concepts techniques, formation sur mesure à partir des outils réels de l'organisation, accompagnement individuel et d'équipe, gestion du changement.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-6 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-offset="0" data-aos-delay="200">
             <div class="icon flex-shrink-0"><i class="bi bi-plug"></i></div>
             <div>
               <h4 class="title">Intégration et configuration</h4>
@@ -392,11 +389,19 @@
             </div>
           </div>
 
-          <div class="col-lg-6 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-offset="0" data-aos-delay="300">
+          <div class="col-lg-6 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-offset="0" data-aos-delay="200">
             <div class="icon flex-shrink-0"><i class="bi bi-laptop"></i></div>
             <div>
               <h4 class="title">Technologies</h4>
               <p class="description">Claude (projets, skills, connecteurs, Claude Code), automatisation des processus, suite Zoho One, autres CRM, Google WS, GA4, Google Ads, WordPress, Cloudflare, Ploi, Resend, Git.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-offset="0" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-people"></i></div>
+            <div>
+              <h4 class="title">Pédagogie et accompagnement</h4>
+              <p class="description">Analyse des besoins, vulgarisation de concepts techniques, formation sur mesure à partir des outils réels de l'organisation, accompagnement individuel et d'équipe, gestion du changement.</p>
             </div>
           </div>
 
@@ -470,15 +475,6 @@
               </ul>
             </div>
 
-            <div class="resume-item">
-              <h4>Méthodologie d'automatisation des opérations</h4>
-              <h5>Digitaleo</h5>
-              <ul>
-                <li>Développement et mise en pratique d'une méthodologie d'automatisation (gestion de la relation client, comptabilité, serveurs, mises à jour de sites web, suivi des projets), appliquée à l'interne et chez des clients.</li>
-                <li>Approche fondée sur des outils standards du marché et une documentation complète, pour que l'organisation reste autonome face aux systèmes mis en place.</li>
-                <li>Cette méthodologie sert de base aux cas concrets présentés en formation.</li>
-              </ul>
-            </div>
 
             <div class="resume-item">
               <h4>Formation et accompagnement</h4>
@@ -508,6 +504,30 @@
         <div class="row gy-4">
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon flex-shrink-0"><i class="bi bi-gear"></i></div>
+            <div>
+              <h4 class="title">Automatisation des opérations</h4>
+              <p class="description">Automatisation des opérations et optimisation des processus d'affaires.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
+            <div>
+              <h4 class="title">Outils de gestion d'entreprise</h4>
+              <p class="description">CRM, comptabilité, facturation, signature électronique, suite Zoho One, Google Workspace.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon flex-shrink-0"><i class="bi bi-hdd-network"></i></div>
+            <div>
+              <h4 class="title">Infrastructure et intégrations</h4>
+              <p class="description">Serveurs, hébergement et déploiement, DNS et sécurité, courriels transactionnels, avec des outils comme Ploi, Resend et Cloudflare.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="icon flex-shrink-0"><i class="bi bi-stars"></i></div>
             <div>
               <h4 class="title">IA générative en entreprise</h4>
@@ -518,20 +538,12 @@
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="icon flex-shrink-0"><i class="bi bi-diagram-3"></i></div>
             <div>
-              <h4 class="title">Mémoire et règles d'affaires pour l'IA</h4>
+              <h4 class="title">Règles d'affaires pour l'IA</h4>
               <p class="description">Architecture de fichiers Markdown versionnés dans Git, organisée en plusieurs niveaux (règles générales de l'organisation, par client, par projet), pour des résultats cohérents et faciles à maintenir.</p>
             </div>
           </div>
 
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon flex-shrink-0"><i class="bi bi-gear"></i></div>
-            <div>
-              <h4 class="title">Automatisation des opérations</h4>
-              <p class="description">Automatisation des opérations et optimisation des processus d'affaires.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="400">
             <div class="icon flex-shrink-0"><i class="bi bi-terminal"></i></div>
             <div>
               <h4 class="title">Commandes personnalisées</h4>
@@ -539,35 +551,19 @@
             </div>
           </div>
 
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
-            <div>
-              <h4 class="title">Rapports et données</h4>
-              <p class="description">Production, analyse et automatisation de rapports à partir de données numériques.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="600">
-            <div class="icon flex-shrink-0"><i class="bi bi-briefcase"></i></div>
-            <div>
-              <h4 class="title">Outils de gestion d'entreprise</h4>
-              <p class="description">CRM, comptabilité, facturation, signature électronique, suite Zoho One, Google Workspace.</p>
-            </div>
-          </div>
-
           <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon flex-shrink-0"><i class="bi bi-hdd-network"></i></div>
-            <div>
-              <h4 class="title">Infrastructure et intégrations</h4>
-              <p class="description">Serveurs, hébergement et déploiement, DNS et sécurité, courriels transactionnels, avec des outils comme Ploi, Resend et Cloudflare.</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="icon flex-shrink-0"><i class="bi bi-graph-up-arrow"></i></div>
             <div>
               <h4 class="title">Marketing numérique et analytique</h4>
               <p class="description">SEO, SEM / Google Ads, Google Analytics 4.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 service-item d-flex" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon flex-shrink-0"><i class="bi bi-bar-chart"></i></div>
+            <div>
+              <h4 class="title">Rapports et données</h4>
+              <p class="description">Production, analyse et automatisation de rapports à partir de données numériques.</p>
             </div>
           </div>
 
